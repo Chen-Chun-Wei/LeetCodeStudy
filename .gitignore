@@ -1,0 +1,34 @@
+# Visual Studio Code 設定檔
+.vscode/
+
+# Visual Studio 設定檔
+*.userprefs
+*.suo
+
+# JetBrains 設定檔
+.idea/
+
+# 編譯產生的檔案
+bin/
+obj/
+.vs/
+
+# 編譯產生的 DLL 和 EXE 檔案
+*.dll
+*.exe
+
+# 應用程式設定檔案
+appsettings.json
+appsettings.Development.json
+
+# 使用者特定設定檔
+*.csproj.user
+
+# 編輯器臨時檔案
+*~
+*.swp
+
+# Visual Studio 排除模式
+/bin/*
+/obj/*
+/Debug/*
