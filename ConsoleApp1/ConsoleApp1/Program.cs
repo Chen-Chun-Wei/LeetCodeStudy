@@ -109,7 +109,9 @@ Console.WriteLine($"output10 : {output10}");
 
 int[] intput11A = new int[] { 0, 1, 0, 3, 12 };
 int[] intput11B = new int[] { 0 };
-arraySolution.MoveZeroes(intput11A);
+int[] intput11C = new int[] { 4, 2, 4, 0, 0, 3, 0, 5, 1, 0 };
+int[] intput11D = new int[] { 45192, 0, -659, -52359, -99225, -75991, 0, -15155, 27382, 59818, 0, -30645, -17025, 81209, 887, 64648 };
+arraySolution.MoveZeroes(intput11D);
 
 #endregion
 

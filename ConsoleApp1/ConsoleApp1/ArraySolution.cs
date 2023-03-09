@@ -345,13 +345,17 @@ public class ArraySolution
     /// <param name="nums"></param>
     public void MoveZeroes(int[] nums)
     {
+        /* 自己解法，效能不好，while 判斷式寫得不好
+        var aa = nums.Where(x => x == 0).Count();
+        if (nums.Length <2 || aa == 0) return;
         int index1 = 0;
         int index2 = 1;
-        int a = 0; 
-        int zeroCount = nums.Where(x => x == 0).Count();
-        while (nums[nums.Length-1] != 0) 
+        int a = 0;
+        int i = 1;
+        bool flag = false;
+        while (!flag) 
         {
-            if (nums[index1] < nums[index2])
+            if (nums[index1] == 0 && nums[index2] != 0)
             {
                 a = nums[index1];
                 nums[index1] = nums[index2];
@@ -359,7 +363,31 @@ public class ArraySolution
             }
             index1++;
             index2++;
+            if (nums[nums.Length - i] == 0) 
+            {
+                index1 = 0;
+                index2 = 1;
+                i++;
+                if (i > aa)
+                {
+                    flag = true;
+                }
+            }
         }
+        */
+        //網路解法
+        int lastEle = 0, curEle = 0;
 
+        while (curEle < nums.Length)
+        {
+            if (nums[curEle] != 0)
+            {
+                int temp = nums[curEle];
+                nums[curEle] = nums[lastEle];
+                nums[lastEle] = temp;
+                lastEle++;
+            }
+            curEle++;
+        }
     }
 }
