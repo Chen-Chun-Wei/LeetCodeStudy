@@ -340,7 +340,7 @@ public class ArraySolution
     }
 
     /// <summary>
-    /// Move Zeroes 將 input 的整數陣列中，將 0 移動到最右邊 
+    /// Move Zeroes 將 input 的整數陣列中，將 0 移動到最右邊，需在不 new 新 array 情況下完成
     /// </summary>
     /// <param name="nums"></param>
     public void MoveZeroes(int[] nums)
@@ -389,5 +389,15 @@ public class ArraySolution
             }
             curEle++;
         }
+    }
+
+    /// <summary>
+    /// Sort Array By Parity 將 input 的 整數陣列中，將偶數移動到最左邊，將奇數移動到最右邊，需在不 new 新 array 情況下完成
+    /// </summary>
+    /// <param name="nums"></param>
+    /// <returns></returns>
+    public int[] SortArrayByParity(int[] nums)
+    {
+        
     }
 }
