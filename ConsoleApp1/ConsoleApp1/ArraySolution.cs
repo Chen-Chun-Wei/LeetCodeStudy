@@ -393,11 +393,136 @@ public class ArraySolution
 
     /// <summary>
     /// Sort Array By Parity 將 input 的 整數陣列中，將偶數移動到最左邊，將奇數移動到最右邊，需在不 new 新 array 情況下完成
+    /// 3, 1, 2, 4 
     /// </summary>
     /// <param name="nums"></param>
     /// <returns></returns>
     public int[] SortArrayByParity(int[] nums)
     {
-        
+        /* LeetCode 有問題 但答案是正確
+        if (nums.Length >= 2 && nums.Where(x => x %2 ==0).Count() > 0 && nums.Where(x => x % 2 == 1).Count() > 0) 
+        {
+            int index1 = 0;
+            int index2 = 0;
+            bool check = true;
+            while (check)
+            {
+                if (index1 >= nums.Length) break;
+                while (nums[index1] % 2 == 1)
+                {
+                    if (index2 == nums.Length) break;
+                    if (nums[index2] % 2 == 0 && nums[index2]!=0)
+                    {
+                        int a = nums[index1];
+                        nums[index1] = nums[index2];
+                        nums[index2] = a;
+                    }
+                    index2++;
+                }
+                index1++;
+            }
+        }
+        return nums;
+        */
+        //
+        List<int> result = new List<int>();
+        foreach (int num in nums)
+        {
+            if (num % 2 == 0)
+            {
+                result.Insert(0, num);
+            }
+            else
+            {
+                result.Add(num);
+            }
+        }
+        return result.ToArray();
     }
+
+    /// <summary>
+    /// Height Checker 將 input 的整數陣列來排序，並output 照順序排要異動幾次
+    /// </summary>
+    /// <param name="heights"></param>
+    /// <returns></returns>
+    public int HeightChecker(int[] heights)
+    {
+        int result = 0;
+        //將 input array 丟給新的 int array - 方法一
+        int[] expectedArray = (int[])heights.Clone();
+
+        //將 input array 丟給新的 int array - 方法二
+        //int[] expectedArray = new int[heights.Length];
+        //Array.Copy(heights, expectedArray, heights.Length);
+        Array.Sort(expectedArray);
+
+        //原先與預期差幾個數字，代表要異動幾次
+        for (int i = 0; i <heights.Length; i++)
+        {
+            if (heights[i] != expectedArray[i])
+            {
+                result++;
+            }
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    /// Third Maximum Number 將 input 的整數陣列中，先排除重覆值後，找第三大的正整數，並 output
+    /// </summary>
+    /// <param name="nums"></param>
+    /// <returns></returns>
+    public int ThirdMax(int[] nums)
+    {
+        //Linq 解法
+        /*
+        int result = 0;
+        var distinctNums = nums.Distinct().ToArray();
+        int check = distinctNums.Length;
+        int firstMax=0, secondMax=0, thirdMax=0;
+        if (check >= 1)
+        {
+            //第一大
+            firstMax = distinctNums.Max();
+            result = firstMax;
+        }
+        if (check > 2)
+        {
+            //第二大
+            secondMax = distinctNums.Where(x => x != firstMax).Max();
+            result = secondMax;
+        }
+        if (check >= 3)
+        {
+            //第三大
+            thirdMax = distinctNums.Where(x => x != firstMax && x != secondMax).Max();
+            result = thirdMax;
+        }
+        */
+
+        //排序解法
+        int result = 0;
+        var distinctNums = nums.Distinct().OrderByDescending(x => x).ToArray();
+        int check = distinctNums.Length;
+        if (check == 1) result = nums[0];
+        if (check == 2) result = distinctNums.Max();
+        if (check >= 3) result = distinctNums[2];
+        return result;
+    }
+
+    /// <summary>
+    /// Find All Numbers Disappeared in an Array ，找出 input 陣列的長度中，沒有出現的數字
+    /// </summary>
+    /// <param name="nums"></param>
+    /// <returns></returns>
+    public IList<int> FindDisappearedNumbers(int[] nums)
+    {
+        //用 Linq 取差集
+        var oldList = nums.ToList();
+        var newList = new List<int>();
+        for (int i = 1; i <= nums.Length; i++) newList.Add(i);
+        return newList.Except(oldList).ToList();
+    }
+
 }

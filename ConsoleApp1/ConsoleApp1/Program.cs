@@ -3,11 +3,8 @@ using ConsoleApp1;
 using System;
 using static ConsoleApp1.Solution;
 
-Console.WriteLine("Hello, World!");
-
 #region 初步LeetCode
-var aa = new Solution();
-
+//var aa = new Solution();
 //var bb = aa.CountOdds1(3, 7); Console.WriteLine(bb);
 //var cc = aa.CountOdds2(3, 7); Console.WriteLine(cc);
 
@@ -33,6 +30,7 @@ var aa = new Solution();
 
 #region Array觀念教學
 var arraySolution = new ArraySolution();
+/*
 //int[] intput1 = new int[] { 1, 1, 0, 1, 1, 1 };
 int[] intput1 = new int[] { 1, 0, 1, 1, 0, 1 };
 var output1 = arraySolution.FindMaxConsecutiveOnes(intput1);
@@ -113,13 +111,72 @@ int[] intput11C = new int[] { 4, 2, 4, 0, 0, 3, 0, 5, 1, 0 };
 int[] intput11D = new int[] { 45192, 0, -659, -52359, -99225, -75991, 0, -15155, 27382, 59818, 0, -30645, -17025, 81209, 887, 64648 };
 arraySolution.MoveZeroes(intput11D);
 
+int[] intput12A = new int[] { 3, 1, 2, 4 };
+int[] intput12B = new int[] { 0 };
+int[] intput12C = new int[] { 0,1,2 };
+int[] intput12D = new int[] { 0,1 };
+arraySolution.SortArrayByParity(intput12D);
+
+
+int[] intput13A = new int[] { 1, 1, 4, 2, 1, 3 };
+int[] intput13B = new int[] { 5, 1, 2, 3, 4 };
+int[] intput13C = new int[] { 1, 2, 3, 4, 5 };
+var output13 = arraySolution.HeightChecker(intput13A);
+Console.WriteLine($"output13 : {output13}");
+
+
+int[] intput14A = new int[] { 3, 2, 1 };
+int[] intput14B = new int[] { 1, 2 };
+int[] intput14C = new int[] { 2, 2, 3, 1 };
+int[] intput14D = new int[] { 1, 1, 2 };
+var output14 = arraySolution.ThirdMax(intput14D);
+Console.WriteLine($"output14 : {output14}");
+
+int[] intput15A = new int[] { 4, 3, 2, 7, 8, 2, 3, 1 };
+int[] intput15B = new int[] { 1, 1 };
+var output15 = arraySolution.FindDisappearedNumbers(intput15B);
+Console.WriteLine($"output14 : {output15}");
+*/
 #endregion
 
 #region 開始刷提
 var testcase = new Solution();
-var input1 = new int[] {2,7,11,15};
-int target1 = 9;
-//var input1 = new int[] { 3, 2, 4 };
-//int target1 = 6; 
-var outPutNo1 = testcase.TwoSum(input1, target1);
+
+/*
+var input1A = new int[] {2,7,11,15};
+int target1A = 9;
+var input1B = new int[] { 3, 2, 4 };
+int target1B = 6; 
+var output1= testcase.TwoSum(input1A, target1A);
+
+
+var input2L1 = new ListNode(2, new ListNode(4, new ListNode(3)));
+var input2L2 = new ListNode(5, new ListNode(6, new ListNode(4)));
+var output2 = testcase.AddTwoNumbers(input2L1, input2L2);
+*/
+
+// 待解
+var input3A = "abcabcbb";
+var input3B = "bbbbb";
+var input3C = "pwwkew";
+var output3 = testcase.LengthOfLongestSubstring(input3A);
+
+
+/*
+var input209A = new int[] { 2, 3, 1, 2, 4, 3 };
+var target209A = 7;
+
+var input209B = new int[] { 1, 4, 4 };
+var target209B = 4;
+
+var input209C = new int[] { 1, 1, 1, 1, 1, 1, 1, 1 };
+var target209C = 11;
+
+var output209 = testcase.MinSubArrayLen(target209A,input209A);
+*/
+
+var input340A = "araaci";
+var target340A = 2;
+
+var end = 0;
 #endregion
